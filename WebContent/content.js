@@ -276,7 +276,7 @@ function init(data) {
 function stripJsonPrefix(text) {
 	// Some implementations return a JSON_PREFIX to help avoid
 	// allowing your JSON replies to be turned into JSONP replies.
-	var JSON_PREFIXES = [")]}', ", ")]}',\n"];
+	var JSON_PREFIXES = [")]}', ", ")]}',\n", "])}while(1);</x>"];
 	for (var i = 0 ; i< JSON_PREFIXES.length; i++) {
 		if (text.substr(0, JSON_PREFIXES[i].length) == JSON_PREFIXES[i]) {
 			text = text.substr(JSON_PREFIXES[i].length);
